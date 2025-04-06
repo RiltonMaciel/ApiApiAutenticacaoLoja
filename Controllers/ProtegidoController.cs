@@ -23,5 +23,5 @@ namespace ApiAutenticacao.Controllers
                 Mensagem = "✅ Token válido! Acesso concedido."
             });
         }
-    }
+    } 
 }
