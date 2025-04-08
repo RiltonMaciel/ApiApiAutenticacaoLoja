@@ -1,66 +1,65 @@
-<<<<<<< HEAD
-# API de Autenticação
+# 🛡️ ApiAutenticacao
 
-Esta API permite o cadastro e login de usuários utilizando autenticação com SQL Server.
+API RESTful em ASP.NET Core com autenticação via JWT, controle de usuários, gerenciamento de produtos, carrinho de compras e pedidos.
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
-- .NET 6
-- C#
+- ASP.NET Core
 - Entity Framework Core
 - SQL Server
-- Swagger
-
-## 📌 Funcionalidades
-
-- Criar usuários
-- Realizar login
-- Segurança com senhas hash
-
-## 📖 Como executar?
-
-```sh
-dotnet run
-=======
-# API de Autenticação em .NET 🚀  
-
-Esta API foi desenvolvida para fornecer um sistema seguro de autenticação de usuários, utilizando **.NET 6, C#, Entity Framework Core e SQL Server**.  
-
-O projeto inclui funcionalidades essenciais para cadastro e login de usuários, além de boas práticas de segurança, como **hashing de senhas**. Ele será aprimorado futuramente com recursos avançados, como **RabbitMQ, Azure Service Bus, Kafka, JWT, OAuth2, OpenID Connect**, entre outros.
+- JWT (Json Web Token)
+- Autenticação via Windows
+- Injeção de Dependência
+- Boas práticas (SOLID, Clean Code)
 
 ---
 
-## 📌 Funcionalidades  
+## 📦 Funcionalidades
 
-- ✅ **Criar usuário** (Cadastro)  
-- ✅ **Realizar login** (Autenticação)  
-- ✅ **Proteção de senhas** com **hash e salt**  
-- ✅ **Swagger** para documentação da API  
+### 🔐 Autenticação
+- Registro de usuários
+- Login com geração de token JWT
+- Proteção de rotas via `[Authorize]`
+
+### 🛍️ Produtos
+- Cadastro, listagem, atualização e remoção de produtos (CRUD)
+
+### 🛒 Carrinho
+- Adicionar produtos ao carrinho
+- Listar itens do carrinho
+- Atualizar quantidade
+- Remover item
+- Limpar carrinho
+
+### 📦 Pedidos
+- Finalizar compra com base no carrinho
+- Geração automática de pedido e seus itens
+- Armazena o histórico de pedidos por usuário
 
 ---
 
-## 🏗️ Tecnologias Utilizadas  
+## 🧪 Como rodar o projeto localmente
 
-- **.NET 6**  
-- **C#**  
-- **Entity Framework Core**  
-- **SQL Server**  
-- **Swagger**  
+### Pré-requisitos
 
----
+- [.NET SDK 6.0+](https://dotnet.microsoft.com/en-us/download)
+- SQL Server (local ou em container)
+- Git
 
-## 🚀 Como executar o projeto?  
+### Passos
 
-### **1️⃣ Configuração Inicial**  
-Antes de iniciar a API, verifique se você possui os seguintes pré-requisitos instalados:  
-
-- [.NET SDK 6+](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)  
-- [SQL Server](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)  
-- [Git](https://git-scm.com/downloads)  
-
-### **2️⃣ Clonar o repositório**  
-Abra o terminal e execute:  
-```sh
+```bash
+# Clone o repositório
 git clone https://github.com/seu-usuario/ApiAutenticacao.git
 cd ApiAutenticacao
->>>>>>> f6e1d12eb6ff46501601e94f2da3b9e7d07e1302
+
+# Restaure os pacotes
+dotnet restore
+
+# Aplique as migrations no banco de dados
+dotnet ef database update
+
+# Rode o projeto
+dotnet run
