@@ -15,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 // 🔹 1. Controllers
 builder.Services.AddControllers();
 
+builder.Services.AddScoped<IPedidoService, PedidoService>();
+
 // 🔹 2. Configuração do Swagger (interface de documentação interativa)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

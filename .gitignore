@@ -3,3 +3,12 @@ obj/
 .vs/
 appsettings.json
 appsettings.Development.json
+*.db
+*.sqlite
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+.env
+

@@ -10,6 +10,10 @@ namespace ApiAutenticacao.Services.Carrinho
         Task RemoverDoCarrinhoAsync(string userId, int itemId);
         Task AtualizarQuantidadeAsync(string userId, CarrinhoUpdateDTO dto);
         Task FinalizarCompraAsync(string userId);
+        Task<decimal> CalcularTotalAsync(string userId);
+        Task LimparCarrinhoAsync(string userId);
+
+
 
 
     }

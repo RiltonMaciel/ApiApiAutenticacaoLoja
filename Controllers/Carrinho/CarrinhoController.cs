@@ -41,13 +41,24 @@ namespace ApiAutenticacao.Controllers.Carrinho
             await _carrinhoService.RemoverDoCarrinhoAsync(userId, itemId);
             return NoContent();
         }
-        [HttpPost("finalizar")]
+        [HttpPost("finalizar-compra")]
 public async Task<ActionResult> FinalizarCompra()
 {
     var userId = User.Identity.Name!;
     await _carrinhoService.FinalizarCompraAsync(userId);
     return Ok(new { mensagem = "Compra finalizada com sucesso!" });
 }
+
+[HttpGet("total")]
+public async Task<ActionResult<decimal>> ObterTotal()
+{
+    var userId = User.Identity.Name!;
+    var total = await _carrinhoService.CalcularTotalAsync(userId);
+    return Ok(total);
+}
+
+
+
 
 
         [HttpPut]
@@ -57,5 +68,16 @@ public async Task<ActionResult> AtualizarQuantidade(CarrinhoUpdateDTO dto)
     await _carrinhoService.AtualizarQuantidadeAsync(userId, dto);
     return NoContent();
 }
+
+
+[HttpDelete("limpar")]
+public async Task<IActionResult> LimparCarrinho()
+{
+    var userId = User.Identity.Name!;
+    await _carrinhoService.LimparCarrinhoAsync(userId);
+    return NoContent();
+}
+
     }
 }
+
